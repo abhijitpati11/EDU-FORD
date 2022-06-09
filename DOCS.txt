@@ -1,0 +1,6 @@
+to create a fully scalable website for a ed-tech startup
+
+day 1 --> created responsive design of the introduction section
+      --> start from 30:00 mins 
+      
+day 2 --> done with the landing page

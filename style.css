@@ -1,0 +1,524 @@
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Merriweather', serif;
+}
+
+
+/* ...............................Home Page Designing....................................... */
+
+/* -------------header section------------- */
+
+.header {
+    min-height: 100vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4, 9, 30, 0.7), rgba(4, 9, 30, 0.7)), url(images/background.jpg);
+    background-position: center;
+    /* block-size: cover; */
+    /* position: relative; */
+    /* background-repeat: no-repeat; */
+    /* background-attachment: fixed; */
+    background-size: 100% 100%;
+}
+
+nav{
+    display: flex;
+    padding: 2% 6%;
+    justify-content: space-between;
+    align-items: center;
+}
+nav img {
+    width: 160px;
+}
+.navLinks {
+    flex: 1;
+    text-align: right;
+}
+.navLinks ul li {
+    list-style: none;
+    display: inline-block;
+    padding: 8px 12px;
+    position: relative;
+}
+.navLinks ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 15px;
+    
+}
+.navLinks ul li::after {
+    content: '';
+    width: 0%;
+    height: 2px;
+    background: red;
+    display: block;
+    margin: auto;
+    transition: 0.3s;
+}
+.navLinks ul li:hover::after {
+    width: 100%; 
+}
+.textBox {
+    width: 90%;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
+}
+.textBox h1 {
+    font-size: 62px;
+}
+.textBox p {
+    margin: 10px 0 40px;
+    font-size: 14px;
+    color: white;
+}
+.hero-btn{
+    display: inline-block;
+    text-decoration: none;
+    color: white;
+    border: 1px solid white;
+    padding: 12px 34px;
+    background: transparent;
+    position: relative;
+    cursor: pointer;
+}
+.hero-btn:hover{
+    border: 1px solid rgb(117, 24, 24);
+    background-color: rgb(117, 24, 24);
+    transition: 1s;
+}
+
+/* hiding the buttons on nav bar */
+nav .fa{
+    display: none;
+}
+
+/* making it responsive */
+@media(max-width:700px) {
+    .textBox h1 {
+        font-size: 20px;
+    }
+    .navLinks ul li {
+        display: block;
+    }
+    .navLinks {
+        position: fixed;
+        background-color: #f44336;
+        height: 100vh;
+        width: 200px;
+        top: 0;
+        right: -200px;
+        text-align: left;
+        z-index: 2;
+        transition: 1s;
+    }
+    nav .fa {
+        display: block;
+        color: white;
+        margin: 10px;
+        font-size: 25px;
+        cursor: pointer; 
+    }
+    .navLinks ul{
+        padding: 30px;
+    }
+}
+
+
+
+/* -------------courses section------------- */
+.course {
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 110px;
+}
+h1 {
+    font-size: 37px;
+    font-weight: 650;
+}
+p{
+    color: #777;
+    font-size: 16px;
+    font-weight: 300;
+    line-height: 22px;
+}
+
+.row  {
+    margin-top: 5%;
+    display: flex;
+    justify-content: space-between;
+}
+.courseCol{
+    flex-basis: 32%;
+    background: rgb(253, 229, 219);
+    border-radius: 12px;
+    margin-bottom: 5%;
+    padding: 21px 13px;
+    box-sizing: border-box;
+    transition: 0.2s;
+}
+h3{
+    text-align: center;
+    font-weight: 600;
+    margin: 10px 0;
+}
+.courseCol:hover {
+    box-shadow: 0 0 20px 0 rgba(0, 0, 0, 1);
+}
+/* resposive design for the course section */
+@media(max-width : 700px) {
+    .row{
+        flex-direction: column;
+    }
+}
+
+
+/* -------------design for our campus section------------- */
+.campus{
+    width: 80%;
+    margin: auto;
+    text-align: center;
+    padding-top: 110px;
+}
+.campusCol {
+    flex-basis: 32%;
+    border-radius: 22px;
+    margin-bottom: 30px;
+    position: relative;
+    overflow: hidden;
+    display: inline-block;
+}
+.campusCol img{
+    width: 100%;
+}
+.layer{
+    background: transparent;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0%;
+    transition: 0.5s;
+}
+.layer:hover{
+    background: rgb(226, 0, 0, 0.7);
+}
+.layer h3{
+    width: 100%;
+    font-weight: 500;
+    color: white;
+    font-size: 27px;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    position: absolute;
+    opacity: 0;
+    transition: 0.5s;
+}
+.layer:hover h3{
+    top: 30%;
+    bottom: 40%;
+    opacity: 1;
+}
+
+
+/* -------------our facility design------------- */
+.facilities{
+    width: 70%;
+    padding-top: 100px;
+    text-align: center;
+    margin: auto;
+}
+.facilityCol {
+    flex-basis: 30%;
+    border-radius: 12px;
+    margin-bottom: 5%;
+    text-align: left;
+}
+.facilityCol img{
+    width: 110%;
+    border-radius: 12px;
+}
+.facilityCol p{
+    padding: 0;
+}
+.facilityCol h3{
+    margin-top: 17px;
+    margin-bottom: 17px;
+    text-align: left;
+}
+
+
+/* -------------testimonials design------------- */
+.testimonial{
+    width: 80%;
+    text-align: center;
+    margin: auto;
+    padding-top: 80px;
+}
+.testimonialCol {
+    flex-basis: 44%;
+    border-radius: 10px;
+    margin-bottom: 5%;
+    text-align: left;
+    background: #fff3f3;
+    padding: 25px;
+    cursor: pointer;
+    display: flex;
+    transition: 0.2s;
+}
+.testimonialCol:hover{
+    box-shadow: 0 0 20px 0 rgb(190, 25, 25);
+}
+.testimonialCol img{
+    height: 40px;
+    margin-left: 5px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+.testimonialCol p {
+    padding: 0;
+}
+.testimonialCol h3 {
+    margin-top: 17px;
+    text-align: left;
+}
+
+.testimonial .fa  {
+    color: red;
+}
+@media (max-width: 700px) {
+    .testimonialCol img{
+        margin-left: 0px;
+        margin-right: 15px;
+    }
+    .testimonialCol h3 {
+        margin-top: 17px;
+        text-align: left;
+        font-size: 15px;
+    }
+}
+
+
+/* -------------call to action design------------- */
+.cta{
+    margin: 100px auto;
+    width: 80%;
+    background-image: linear-gradient(rgba(0,0,0,0.7), rgba(0,0,0,0.7)), url(images/banner.jpg);
+    background-repeat: none;
+    background-position: center;
+    background-size: 100% 100%;
+    block-size: cover;
+    border-radius: 10px;
+    text-align: center;
+    padding: 100px 0;
+}
+.cta h1{
+    color: white;
+    margin-bottom: 40px;
+    padding : 0;
+}
+@media(max-width: 700px) {
+    .cta h1{
+        color: white;
+        margin-bottom: 40px;
+        padding : 0;
+        font-size: 20px;
+    }
+}
+
+
+/* -------------footer design------------- */
+.footer{
+    width: 100%;
+    text-align: center;
+    padding: 30px 0;
+}
+.footer h4{
+    margin-bottom: 26px;
+    margin-top: 20px;
+    font-weight: 600;
+}
+/* icons designing */
+.icons .fa{
+    color: red;
+    margin: 0 13px;
+    cursor: pointer;
+    padding: 18px 0;
+}
+
+
+
+
+/* .............................about us  and subheader design........................................ */
+
+.subheader{
+    height: 50vh;
+    width: 100%;
+    background-image: linear-gradient(rgba(4,9,30,0.7), rgba(4,9,30,0.7)), url(images/aboutImage.jpg);
+    background-position: center;
+    background-size: cover;
+    text-align: center;
+    color: white;
+}
+.subheader h1{
+    margin-top: 120px;
+}
+
+.aboutus{
+    width: 80%;
+    margin: auto;
+    padding-top: 80px;
+    padding-bottom: 50px;
+}
+.aboutcol{
+    flex-basis: 48%;
+    padding: 30px 2px;
+}
+.aboutcol img{
+    width: 100%;
+}
+.aboutcol h1{
+    padding-top: 0;
+}
+.aboutcol p{
+    padding: 15px 0 25px;
+}
+.red-btn{
+    border: 1px solid red;
+    background: transparent;
+    color: red;
+    transition: 0.4s;
+}
+.red-btn:hover{
+    color: white;
+}
+
+
+/* ---------------blog page designing--------------- */
+.blogcontent{
+    width: 80%;
+    margin: auto;
+    padding: 60px 0;
+}
+/* blog left design */
+.blogleft{
+    flex-basis: 65%;
+}
+.blogleft img{
+    width: 100%;
+}
+.blogleft h2 {
+    color: #222;
+    font-weight: 600;
+    margin: 30px 0;
+}
+.blogleft p{
+    color: #999;
+    padding: 0;
+}
+
+/* right blog design */
+.blogright {
+    flex-basis: 33%;
+}
+.blogright h3{
+    background-color: red;
+    color: white;
+    padding: 7px 0;
+    font-size: 27px;
+    margin-bottom: 20px;
+}
+.blogright div{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 8px;
+    box-sizing: border-box;
+    font-size: larger;
+    font-weight: 500;
+}
+/* comment box design*/
+.commentbox {
+    border: 1px solid #ccc;
+    margin: 50px 0;
+    padding: 10px 20px;
+}
+.commentbox h3{
+    text-align: left;
+}
+.button{
+    display: block;
+    margin: 10px 0;
+}
+.commentform input, .commentform textarea{
+    width: 100%;
+    padding: 10px;
+    margin: 15px 0;
+    box-sizing: border-box;
+    border: none;
+    outline: none;
+    background:#f0f0f0;
+}
+@media(max-width:700px) {
+    .subheader h1{
+        font-size: 26px;
+    }
+}
+
+
+
+
+/* contact us design */
+/* map design */
+.location{
+    width: 80%;
+    margin: auto;
+    padding: 80px 0;
+}
+.location iframe  {
+    width: 100%;
+}
+/* contact detail design */
+.contactus{
+    width: 80%;
+    margin: auto;    
+}
+.contactcol{
+    flex-basis: 48%;
+    margin-bottom: 30px;
+}
+.contactcol div{
+    display: flex;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.contactcol div .fa{
+    font-size: 25px;
+    color: red;
+    margin: 10px;
+    margin-right: 16px;
+}
+.contactcol div p{
+    padding: 0;
+}
+.contactcol div h5{
+    font-size: 23px;
+    margin-bottom: 5px;
+    color: #555;
+    font-weight: 450;
+}
+
+/* message box design */
+.contactcol input, .contactcol textarea{
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 18px;
+    border: 1 px solid black;
+    outline: none;
+    box-sizing: border-box;
+}
